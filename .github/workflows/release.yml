@@ -32,6 +32,14 @@ jobs:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
 
+      - name: Install GPG
+        if: runner.os == 'macOS'
+        run: brew install gnupg
+
+      - name: Install GPG
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y gnupg2
+
       - name: Run GoReleaser
         run: |
           curl -sL https://git.io/goreleaser | sh -s -- release --clean
