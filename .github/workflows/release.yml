@@ -34,7 +34,7 @@ jobs:
 
       - name: Install GPG
         if: runner.os == 'macOS'
-        run: brew install gnupg
+        run: brew install gpg
 
       - name: Install GPG
         if: runner.os == 'Linux'
