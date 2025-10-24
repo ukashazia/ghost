@@ -4,6 +4,11 @@
 - The program is paused when there's any mouse/keyboard activity.
 
 ``` bash
-go run ./...
+brew install --cask ukashazia/ghost/ghost
 ```
 
+allow the app in `System Settings` -> `Privacy & Security`
+
+``` bash
+ghost -h
+```
